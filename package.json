@@ -1,0 +1,13 @@
+{
+    "name": "fullstack-deployment-test",
+    "version": "1.0.0",
+    "scripts": {
+      "install:all": "pnpm install && cd frontend && pnpm install && cd ../backend && pnpm install",
+      "dev": "concurrently \"cd frontend && npm run dev\" \"cd backend && npm run start:dev\"",
+      "build": "cd frontend && pnpm run build && cd ../backend && pnpm run build",
+      "start": "cd backend && pnpm run start:prod"
+    },
+    "devDependencies": {
+      "concurrently": "^8.0.1"
+    }
+  }
