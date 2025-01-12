@@ -9,6 +9,6 @@ async function bootstrap() {
     credentials: true,                // If you're using cookies or other credentials
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
   });
-  await app.listen(process.env.PORT ?? 3000);
+  await app.listen(process.env.PORT ?? 9000);
 }
 bootstrap();
