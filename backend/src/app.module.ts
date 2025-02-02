@@ -2,6 +2,9 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
+import { SsrService } from './ssr/ssr.service';
+import { SsrController } from './ssr/ssr.controller';
+import { MockService } from './mock/mock.service';
 
 @Module({
   imports: [
@@ -10,8 +13,8 @@ import { ConfigModule } from '@nestjs/config';
       envFilePath: determineEnvFilePath(),
     })
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [AppController, SsrController],
+  providers: [AppService, SsrService, MockService],
 })
 export class AppModule {}
 
