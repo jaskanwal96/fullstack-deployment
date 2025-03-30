@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jaskanwal-backend-landing
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: jaskanwal-backend-landing
+  template:
+    metadata:
+      labels:
+        app: jaskanwal-backend-landing
+    spec:
+      containers:
+        - name: jaskanwal-backend-landing
+          image: jaskanwal196/backend:linux
+          ports:
+            - containerPort: 3000
+      nodeSelector:
+        user-type: alpha
