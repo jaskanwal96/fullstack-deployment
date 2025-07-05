@@ -1,5 +1,6 @@
 import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
+import * as os from 'os';
 
 @Controller()
 export class AppController {
@@ -8,5 +9,10 @@ export class AppController {
   @Get('api/message')
   getMessage() {
     return { message: this.appService.getMessage() };
+  }
+
+  @Get()
+  getPodHostname(): string {
+    return `Handled by pod: ${os.hostname()}`;
   }
 }
